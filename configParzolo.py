@@ -37,6 +37,8 @@ class ConfigParsolo:
                 dict1[option] = None
         return dict1
 
+    # Checking the config file's values
+
     def config_lekeres(self, szekcio2, mezo):
         szekcio = self.config_section_map(szekcio2)
         if szekcio[mezo] == 'True':
@@ -47,6 +49,8 @@ class ConfigParsolo:
             return None
         else:
             return szekcio[mezo]
+
+    # Modifying the config file
 
     def config_modosito(self, szekcio3, mezo1, uj_ertek):
         config = self.config
