@@ -1,7 +1,7 @@
 # Created by Daniel Nagy
 #
 # How to use example:
-# you need a config.cfg file to create! 
+# you don't need a config.cfg file if you use a modify method!
 #
 # config = ConfigParsolo('config.cfg')
 # print(config.config_lekeres('first', 'var1'))
@@ -21,7 +21,6 @@ class ConfigParsolo:
         self.config_file_name = config_file_name
         config.read(config_file_name)
         config.sections()
-        config
 
     def config_section_map(self, section):
         config = self.config
