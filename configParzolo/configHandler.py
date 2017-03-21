@@ -15,7 +15,7 @@ except ImportWarning and ImportError as error_msg:
     print('You can solve it by downloading configparser: pip install configparser')
 
 
-class ConfigParsolo:
+class ConfigHandler:
     config = configparser.ConfigParser()
     config_file_name = ""
 
