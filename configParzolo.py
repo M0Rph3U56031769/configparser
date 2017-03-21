@@ -39,7 +39,7 @@ class ConfigParsolo:
 
     # Checking the config file's values
 
-    def config_lekeres(self, szekcio2, mezo):
+    def config_check(self, szekcio2, mezo):
         szekcio = self.config_section_map(szekcio2)
         if szekcio[mezo] == 'True':
             return True
