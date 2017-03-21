@@ -8,13 +8,15 @@ class TestConfigParsolo(unittest.TestCase):
     def test_modify(self):
         config2 = ConfigParsolo('config.cfg')
         config2.config_modify('base', 'elso', 'unmodified')
-        print('before modify: '+config2.config_check('base', 'elso'))
+        self.assertEqual('unmodified', config2.config_check('base', 'elso'))
+
         config2.config_modify('base', 'elso', 'modified')
-        print('after modify: '+config2.config_check('base', 'elso'))
+        self.assertEqual('modified', config2.config_check('base', 'elso'))
 
     def test_check(self):
         config = ConfigParsolo('config2.cfg')
-        print('Check config file: '+config.config_check('base', 'elso'))
+        self.assertIsNotNone(config)
+        self.assertEqual(config.config_check('base', 'elso'), 'modified')
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    unittest.main()
