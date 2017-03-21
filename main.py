@@ -7,9 +7,9 @@ from configParzolo import ConfigParsolo
 class TestConfigParsolo(unittest.TestCase):
     def test_modify(self):
         config2 = ConfigParsolo('config.cfg')
-        config2.config_modosito('base', 'elso', 'unmodified')
+        config2.config_modify('base', 'elso', 'unmodified')
         print('before modify: '+config2.config_check('base', 'elso'))
-        config2.config_modosito('base', 'elso', 'modified')
+        config2.config_modify('base', 'elso', 'modified')
         print('after modify: '+config2.config_check('base', 'elso'))
 
     def test_check(self):

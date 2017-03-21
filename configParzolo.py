@@ -55,7 +55,7 @@ class ConfigParsolo:
 
     # Modifying the config file
 
-    def config_modosito(self, szekcio3, mezo1, uj_ertek):
+    def config_modify(self, szekcio3, mezo1, uj_ertek):
         config = self.config
         config_file_name = self.config_file_name
         cfgfile = open(config_file_name, 'w')
