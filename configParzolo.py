@@ -8,8 +8,11 @@
 # config2.config_modosito('base', 'elso', 'masodik')
 # print(config2.config_lekeres('base', 'elso'))
 
-
-import configparser
+try:
+    import configparser
+except ImportWarning and ImportError as error_msg:
+    print('Import at error: '+error_msg)
+    print('You can solve it by downloading configparser: pip install configparser')
 
 
 class ConfigParsolo:
