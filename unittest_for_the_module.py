@@ -15,7 +15,7 @@ class TestConfigParsolo(unittest.TestCase):
         self.assertEqual('modified', config2.config_check('base', 'first'))
 
     def test_check(self):
-        config = configHandler.ConfigHandler('config2.cfg')
+        config = configHandler.ConfigHandler('config.cfg')
         self.assertIsNotNone(config)
         self.assertEqual(config.config_check('base', 'first'), 'modified')
 

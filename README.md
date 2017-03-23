@@ -9,7 +9,7 @@ Usage:
 - check somthing from the config file: config.config_check('section', 'variable')
 - modify something in the config file: config.config_modify('section', 'variable', 'new value')
 
-
+Note: checkConfig will not autocreate the config file but the configModify will do it.
 
 Author: Daniel Nagy
 
