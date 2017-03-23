@@ -27,39 +27,39 @@ class ConfigHandler:
 
     def config_section_map(self, section):
         config = self.config
-        dict1 = {}
+        section_map = {}
         options = config.options(section)
         for option in options:
             try:
-                dict1[option] = config.get(section, option)
-                if dict1[option] == -1:
+                section_map[option] = config.get(section, option)
+                if section_map[option] == -1:
                     print("skip: %s" % option)
-            except Exception as error_msg:
+            except Exception as ERROR_MSG:
                 print("exception on %s!" % option)
-                print(error_msg)
-                dict1[option] = None
-        return dict1
+                print(ERROR_MSG)
+                section_map[option] = None
+        return section_map
 
     # Checking the config file's values
 
-    def config_check(self, szekcio2, mezo):
-        szekcio = self.config_section_map(szekcio2)
-        if szekcio[mezo] == 'True':
+    def config_check(self, section, field):
+        section_local = self.config_section_map(section)
+        if section_local[field] == 'True':
             return True
-        elif szekcio[mezo] == 'False':
+        elif section_local[field] == 'False':
             return False
-        elif szekcio[mezo] == 'None':
+        elif section_local[field] == 'None':
             return None
         else:
-            return szekcio[mezo]
+            return section_local[field]
 
     # Modifying the config file
 
-    def config_modify(self, szekcio3, mezo1, uj_ertek):
+    def config_modify(self, section, field, new_value):
         config = self.config
         config_file_name = self.config_file_name
         cfgfile = open(config_file_name, 'w')
-        if uj_ertek is not None:
-            config.set(szekcio3, mezo1, uj_ertek)
+        if new_value is not None:
+            config.set(section, field, new_value)
             config.write(cfgfile)
             cfgfile.close()

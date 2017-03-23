@@ -19,5 +19,6 @@ class TestConfigParsolo(unittest.TestCase):
         self.assertIsNotNone(config)
         self.assertEqual(config.config_check('base', 'first'), 'modified')
 
+
 if __name__ == "__main__":
     unittest.main()
